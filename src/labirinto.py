@@ -3,6 +3,7 @@ import random
 import sys
 from ttkthemes import ThemedTk
 from tkinter import ttk
+import heapq
 
 
 class Labirinto:
@@ -54,6 +55,10 @@ class Labirinto:
         pygame.draw.rect(self.screen, (0, 0, 255), (x * self.tile_size, y * self.tile_size, self.tile_size, self.tile_size))
         pygame.display.flip()
 
+    def draw_cell(self, x, y, color):
+        pygame.draw.rect(self.screen, color, (x * self.tile_size, y * self.tile_size, self.tile_size, self.tile_size))
+        pygame.display.update()
+
     def DFS(self, start, end):
         stack = [start]
         visited = set()
@@ -84,19 +89,66 @@ class Labirinto:
 
             clock.tick(10000)
 
-def main(algoritmo):
+    def dijkstra(self, start, end):
+            queue = [(0, start)]
+            distances = {start: 0}
+            previous = {start: None}
+            visited = set()
+
+            while queue:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+
+                current_distance, current = heapq.heappop(queue)
+                if current in visited:
+                    continue
+                visited.add(current)
+
+                x, y = current
+                self.draw_cell(x, y, (0, 255, 0))
+                pygame.time.wait(10)
+
+                print(current)
+                if current == end:
+                    path = []
+                    while current:
+                        path.append(current)
+                        current = previous[current]
+                    path.reverse()
+
+                    for px, py in path:
+                        self.draw_cell(px, py, (0, 0, 255))  
+                        pygame.time.wait(5)
+                    return
+                
+                cx, cy = current
+                for dx, dy in self.directions:
+                    nx, ny = cx + dx, cy + dy
+                    if self.is_within_bounds(nx, ny) and self.grid[ny][nx] == 1:
+                        neighbor = (nx, ny)
+                        new_distance = current_distance + 1
+
+                        if neighbor not in distances or new_distance < distances[neighbor]:
+                            distances[neighbor] = new_distance
+                            previous[neighbor] = current
+                            heapq.heappush(queue, (new_distance, neighbor))
+
+def main(algoritmo, width, height):
     pygame.init()
     infoObject = pygame.display.Info()
-    width, height = infoObject.current_w, infoObject.current_h
     tile_size = 5
 
     labirinto = Labirinto(width, height, tile_size)
     labirinto.generate_maze(0, 0)
     labirinto.draw_maze()
-    if algoritmo == "Djstra":
-        print("aaaaa")
+    if algoritmo == "Dijkstra":
+        start = (0, 0)
+        end = (labirinto.cols - 2, labirinto.rows - 2)
+        labirinto.dijkstra(start, end)
     elif algoritmo == "DFS":
-        labirinto.DFS((0, 0), (width-2, height-2))
+        labirinto.DFS((0, 0), (labirinto.cols - 2, labirinto.rows - 2))
     elif algoritmo == "BogoSort":
         print("bbbb")
 
@@ -118,8 +170,11 @@ def centralizar_janela(janela, largura, altura):
 def salvar_input():
     algoritmo = combobox.get()
     print(f"Algoritmo selecionado: {algoritmo}")
+    largura_labirinto = largura_entry.get()
+    altura_labirinto = altura_entry.get()
+    print(f"Largura: {largura_labirinto}, Altura: {altura_labirinto}")
     janela.destroy()
-    main(algoritmo)
+    main(algoritmo, int(largura_labirinto), int(altura_labirinto))
 
 
 if __name__ == "__main__":
@@ -129,15 +184,25 @@ if __name__ == "__main__":
     janela.configure(bg="white")
 
     largura = 400
-    altura = 200
+    altura = 400
     centralizar_janela(janela, largura, altura)
 
     label = ttk.Label(janela, text="Labirinto", font=("Arial", 24))
     label.pack(pady=20)
 
-    combobox = ttk.Combobox(janela, values=["Djstra", "DFS", "BogoSort"], font=("Arial", 10), justify='center')
+    label_largura = ttk.Label(janela, text="Largura do labirinto:", font=("Arial", 10))
+    label_largura.pack(pady=5)
+    largura_entry = ttk.Entry(janela, font=("Arial", 10))
+    largura_entry.pack(pady=5)
+
+    label_altura = ttk.Label(janela, text="Altura do labirinto:", font=("Arial", 10))
+    label_altura.pack(pady=5)
+    altura_entry = ttk.Entry(janela, font=("Arial", 10))
+    altura_entry.pack(pady=5)
+
+    combobox = ttk.Combobox(janela, values=["Dijkstra", "DFS", "BogoSort"], font=("Arial", 10), justify='center')
     combobox.pack(pady=10)
-    combobox.set("Djstra")
+    combobox.set("Dijkstra")
 
     botao = ttk.Button(janela, text="Gerar Labirinto", command=salvar_input)
     botao.pack(pady=10)
