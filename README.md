@@ -11,7 +11,9 @@
 
 ## Sobre 
 
-Criamos um gerador de labirinto depois aplicamos o algoritomo de dijkstra para resolvelo. 
+Criamos um gerador de labirinto depois aplicamos o algoritomo de dijkstra para resolvelo.
+
+Link da apresentação https://www.youtube.com/watch?v=M_NnfWo8M7c
 
 ## Screenshots
 <div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/master/Images/logo.png?raw=true"/></div>
@@ -38,6 +40,10 @@ Figura 3 - DFS
 
 ## Uso 
 Basta baixar as dependências e rodar o script labirinto.py dentro da pasta src.
+
+## Apresentação
+
+Para assistir a apresentação basta clicar [aqui](https://www.youtube.com/watch?v=M_NnfWo8M7c).
 
 
 
