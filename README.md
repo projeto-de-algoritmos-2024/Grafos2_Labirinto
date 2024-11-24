@@ -1,40 +1,29 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
-
-Temas:
- - Grafos2
-
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
+# Labirinto
 
 **Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Grafos2<br>
 
 ## Alunos
 | Matrícula  | Aluno                        |
 |------------|------------------------------|
+| 22/1031149 | Danilo César Tertuliano Melo |
 | 22/1008150 | João Antonio Ginuino Cavalho |
-| xx/xxxxxx  | xxxx xxxx xxxxx              |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+
+Criamos um gerador de labirinto depois aplicamos o algoritomo de dijkstra para resolvelo. 
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+> pip instal pygame
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Basta baixar as dependências e rodar o script labirinto.py dentro da pasta src.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+
 
 
 
