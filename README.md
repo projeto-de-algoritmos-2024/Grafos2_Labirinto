@@ -14,19 +14,19 @@
 Criamos um gerador de labirinto depois aplicamos o algoritomo de dijkstra para resolvelo. 
 
 ## Screenshots
-<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/logo.png?raw=true"/></div>
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/master/Images/logo.png?raw=true"/></div>
 
 <center>
 Figura 1 - Aplicando filto
 </center>
 
-<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/dj.png?raw=true"/></div>
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/master/Images/dj.png?raw=true"/></div>
 
 <center>
 Figura 2 - dijkstra
 </center>
 
-<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/dfs.png?raw=true"/></div>
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/master/Images/dfs.png?raw=true"/></div>
 
 <center>
 Figura 3 - DFS
