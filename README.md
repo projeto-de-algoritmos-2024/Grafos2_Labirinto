@@ -14,7 +14,23 @@
 Criamos um gerador de labirinto depois aplicamos o algoritomo de dijkstra para resolvelo. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/logo.jpg?raw=true"/></div>
+
+<center>
+Figura 1 - Aplicando filto
+</center>
+
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/dj.jpg?raw=true"/></div>
+
+<center>
+Figura 2 - dijkstra
+</center>
+
+<div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/main/Images/dfs.jpg?raw=true"/></div>
+
+<center>
+Figura 3 - DFS
+</center>
 
 ## Instalação 
 **Linguagem**: Python<br>

@@ -1,3 +1,5 @@
+import time
+
 import pygame
 import random
 import sys
@@ -87,7 +89,7 @@ class Labirinto:
                     if self.is_within_bounds(nx, ny) and self.grid[ny][nx] == 1 and (nx, ny) not in visited:
                         stack.append((nx, ny))
 
-            clock.tick(10000)
+            clock.tick(500)
 
     def dijkstra(self, start, end):
             queue = [(0, start)]
@@ -137,27 +139,20 @@ class Labirinto:
 
 def main(algoritmo, width, height):
     pygame.init()
-    infoObject = pygame.display.Info()
     tile_size = 5
 
     labirinto = Labirinto(width, height, tile_size)
     labirinto.generate_maze(0, 0)
     labirinto.draw_maze()
+    start = (0, 0)
+    end = (labirinto.cols - 2, labirinto.rows - 2)
     if algoritmo == "Dijkstra":
-        start = (0, 0)
-        end = (labirinto.cols - 2, labirinto.rows - 2)
         labirinto.dijkstra(start, end)
     elif algoritmo == "DFS":
-        labirinto.DFS((0, 0), (labirinto.cols - 2, labirinto.rows - 2))
-    elif algoritmo == "BogoSort":
-        print("bbbb")
+        labirinto.DFS(start, end)
 
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-    pygame.quit()
+
+    time.sleep(10)
     sys.exit()
 
 def centralizar_janela(janela, largura, altura):
@@ -170,8 +165,8 @@ def centralizar_janela(janela, largura, altura):
 def salvar_input():
     algoritmo = combobox.get()
     print(f"Algoritmo selecionado: {algoritmo}")
-    largura_labirinto = largura_entry.get()
-    altura_labirinto = altura_entry.get()
+    largura_labirinto = 500
+    altura_labirinto = 500
     print(f"Largura: {largura_labirinto}, Altura: {altura_labirinto}")
     janela.destroy()
     main(algoritmo, int(largura_labirinto), int(altura_labirinto))
@@ -184,23 +179,13 @@ if __name__ == "__main__":
     janela.configure(bg="white")
 
     largura = 400
-    altura = 400
+    altura = 200
     centralizar_janela(janela, largura, altura)
 
     label = ttk.Label(janela, text="Labirinto", font=("Arial", 24))
     label.pack(pady=20)
 
-    label_largura = ttk.Label(janela, text="Largura do labirinto:", font=("Arial", 10))
-    label_largura.pack(pady=5)
-    largura_entry = ttk.Entry(janela, font=("Arial", 10))
-    largura_entry.pack(pady=5)
-
-    label_altura = ttk.Label(janela, text="Altura do labirinto:", font=("Arial", 10))
-    label_altura.pack(pady=5)
-    altura_entry = ttk.Entry(janela, font=("Arial", 10))
-    altura_entry.pack(pady=5)
-
-    combobox = ttk.Combobox(janela, values=["Dijkstra", "DFS", "BogoSort"], font=("Arial", 10), justify='center')
+    combobox = ttk.Combobox(janela, values=["Dijkstra", "DFS"], font=("Arial", 10), justify='center')
     combobox.pack(pady=10)
     combobox.set("Dijkstra")
 
