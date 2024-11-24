@@ -1,12 +1,8 @@
 **!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
 
 Temas:
- - Grafos1
  - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
+
  
  **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
  
@@ -18,10 +14,10 @@ Temas:
 **Conteúdo da Disciplina**: XXXXXXXXXX<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| Matrícula  | Aluno                        |
+|------------|------------------------------|
+| 22/1008150 | João Antonio Ginuino Cavalho |
+| xx/xxxxxx  | xxxx xxxx xxxxx              |
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
