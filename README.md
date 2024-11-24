@@ -18,7 +18,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python<br>
-> pip instal pygame
+> pip instal pygame ThemedTk ttk
 
 ## Uso 
 Basta baixar as dependências e rodar o script labirinto.py dentro da pasta src.
