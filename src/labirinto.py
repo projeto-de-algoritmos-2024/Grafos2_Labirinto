@@ -255,7 +255,11 @@ def salvar_input():
     algoritmo = combobox.get()
     print(f"Algoritmo selecionado: {algoritmo}")
     largura_labirinto = largura_entry.get()
+    if int(largura_labirinto) > 600:
+        largura_labirinto = 600
     altura_labirinto = altura_entry.get()
+    if int(altura_labirinto) > 600:
+        altura_labirinto = 600
     num_pontos_vermelhos = pontos_vermelhos_entry.get()
     
     print(f"Largura: {largura_labirinto}, Altura: {altura_labirinto}, Pontos Vermelhos: {num_pontos_vermelhos}")
@@ -288,10 +292,12 @@ if __name__ == "__main__":
 
     label_pontos_vermelhos = ttk.Label(janela, text="Número de pontos vermelhos:", font=("Arial", 10))
     pontos_vermelhos_entry = ttk.Entry(janela, font=("Arial", 10))
+    
 
     def atualizar_visibilidade(event):
         if combobox.get() == "Prim":
             label_pontos_vermelhos.pack(pady=5)
+            pontos_vermelhos_entry.insert(0, "0")
             pontos_vermelhos_entry.pack(pady=5)
         else:
             label_pontos_vermelhos.pack_forget()
