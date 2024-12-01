@@ -1,6 +1,6 @@
 # Labirinto
 
-**Número da Lista**: X<br>
+**Número da Lista**: 12<br>
 **Conteúdo da Disciplina**: Grafos2<br>
 
 ## Alunos
