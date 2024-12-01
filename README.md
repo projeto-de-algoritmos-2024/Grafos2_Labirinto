@@ -13,7 +13,7 @@
 
 Criamos um gerador de labirintos e, em seguida, utilizamos o algoritmo de Dijkstra para encontrar a solução. Para tornar o problema mais desafiador e interessante, introduzimos obstáculos ao atribuir pesos diferentes a diversos tipos de caminho, simulando terrenos com custos variados. Além disso, implementamos o algoritmo de Prim para descobrir a menor árvore geradora que conecta n pontos dentro do labirinto, permitindo analisar diferentes estratégias de otimização em grafos.
 
-Link da apresentação https://www.youtube.com/watch?v=M_NnfWo8M7c
+Link da apresentação https://youtu.be/FBftMS3RuVk?si=d4rdqZdC5TnDR_HC
 
 ## Screenshots
 <div align="center"><img src= "https://raw.githubusercontent.com/projeto-de-algoritmos-2024/Grafos2_Labirinto/refs/heads/master/Images/menu.png?raw=true"/></div>
@@ -43,7 +43,7 @@ Basta baixar as dependências e rodar o script labirinto.py dentro da pasta src.
 
 ## Apresentação
 
-Para assistir a apresentação basta clicar [aqui](https://www.youtube.com/watch?v=M_NnfWo8M7c).
+Para assistir a apresentação basta clicar [aqui](https://youtu.be/FBftMS3RuVk?si=d4rdqZdC5TnDR_HC).
 
 
 
